@@ -1,0 +1,16 @@
+<view class='rui-assortment-head'>请选择病种分类</view>
+
+<view class='rui-assortment-li' bindtap='goToRegister' data-obj="{{item}}" wx:if="{{diseaseClassList.length > 0}}" wx:for="{{diseaseClassList}}" wx:key="diseaseClassList">
+  <view class='rui-assortment-name'>
+    {{item.name}}
+    <view class='rui-assortment-price'>￥<text style='font-size:4vw;'>{{item.diagnosisExpense}}</text></view>
+    <view class='rui-mine-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;right:0px;'></view>
+  </view>
+  <view class='rui-assortment-detail'>
+    {{item.desc}}
+  </view>
+</view>
+
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

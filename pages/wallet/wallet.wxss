@@ -1,0 +1,18 @@
+/* pages/wallet/wallet.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-content{
+  width: 100vw;
+  height: 56.93vw;
+  background-color: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 4vw;
+  color: #333333;
+  text-align: center;
+}
+.rui-wallet-detail{
+  float: right;
+  margin-bottom: 10.93vw;
+}

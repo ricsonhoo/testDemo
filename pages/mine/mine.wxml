@@ -1,0 +1,35 @@
+<view class='rui-mine-head'>
+  <view class='rui-mine-logo'><image style='width:16vw;height:16vw;' src='{{personalInfo.photo}}'></image></view>
+  <view>{{personalInfo.name}}</view>
+</view>
+<!--修改个人资料  -->
+<navigator hover-class='none' url='../../pages/edit/edit'>
+<view class='rui-mine-edit'>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconEdit}}) no-repeat left center/15px 15px;left:15px;'></view>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;right:15px;'></view>
+  修改个人资料
+</view>
+</navigator>
+<navigator hover-class='none' url='../../pages/wallet/wallet'>
+<view class='rui-mine-edit'>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconQianbao}}) no-repeat center center/17px 17px;left:15px;width:17px;'></view>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;right:15px;'></view>
+  我的钱包
+</view>
+</navigator> 
+<navigator hover-class='none' url='../../pages/bespoke/bespoke'>
+<view class='rui-mine-edit'>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconYuyue}}) no-repeat center center/17px 17px;left:15px;width:17px;'></view>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;right:15px;'></view>
+  预约记录
+</view>
+</navigator> 
+<navigator hover-class='none' url='../../pages/visit/visit'>
+<view class='rui-mine-edit'>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconJiuzhen}}) no-repeat center center/17px 17px;left:15px;width:17px;'></view>
+  <view class='rui-mine-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;right:15px;'></view>
+  就诊记录
+  <text class='rui-prompt'></text> 
+</view>
+</navigator>  
+<button class='rui-submit-btn' bindtap='unbindInfo' style='background-color:#fff;border-radius:5px;color:#e94f4f;'>退出并解绑</button>

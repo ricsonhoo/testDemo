@@ -1,0 +1,102 @@
+<view>
+  <view class='rui-register-btn' bindtap='getDoctorList'>确认</view>
+  <view class='rui-register-picker'>
+    <picker class='rui-register-picker-li' value='{{clinicList[clinic].name}}' bindchange='getClinic' range='{{clinicList}}' range-key='name'>
+      {{clinicList[clinic].name}}
+      <text class='rui-reg-icon' style='background:url({{iconPath.iconDownD}}) no-repeat center center/3vw 3vw;right:0;'></text>
+    </picker>
+    <picker class='rui-register-picker-li' bindchange='getDate' mode="date" start="{{startTime}}">
+      {{date}}
+      <text class='rui-reg-icon' style='background:url({{iconPath.iconDownP}}) no-repeat center center/3vw 3vw;right:0;'></text>
+    </picker>
+  </view>
+</view>
+
+<view class="rui-assortment-head" wx:if="{{amList.length > 0 || pmList.length > 0}}">
+  <view bindtap='changeNav' data-type="num" class='rui-visit-nav-li {{isShow !== "all" ? "rui-active" : ""}}'>
+    上午
+  </view>
+  <view bindtap='changeNav' data-type="all" class='rui-visit-nav-li {{isShow === "all" ? "rui-active" : ""}}'>
+    下午
+  </view>
+</view>
+
+<!--上午  -->
+<view class='{{isShow !== "all" ? "" : "rui-hide"}}'>
+  <view class='rui-visit-list' wx:if="{{amList.length > 0}}" wx:for="{{amList}}" wx:key="amList">
+    <image class='rui-register-logo' src='{{item.photo}}'></image>
+    <view style='overflow:hidden;padding-left:4vw;height:13.3vw;'>
+      <view class='rui-register-name'>
+        {{item.name}}
+        <!--满#EC6262  -->
+        <text class='rui-register-num' wx:if="{{item.countStatus == 1}}">{{item.countDesc}}</text>
+        <text class='rui-register-num' style='color:#EC6262' wx:if="{{item.countStatus == 0}}">满</text>
+      </view>
+      <view class='rui-register-year'>
+        <text>性别：{{item.gender == 0 ? '女' : item.gender == 1 ? '男' : '未知'}}</text>
+        <text>年龄：{{item.age}}</text>
+        <!--满#D2D2D2  -->
+        <view class='rui-register-btn0'  wx:if="{{item.countStatus == 1}}" data-obj="{{item}}" data-during="0" bindtap='booking'>预约</view>
+        <view class='rui-register-btn0' style='background:#D2D2D2' wx:if="{{item.countStatus == 0}}">预约</view>
+      </view>
+    </view>
+    <view class='rui-register-detail'>
+      擅长：{{item.major}}
+    </view>
+    <!-- <view class='rui-register-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;'></view> -->
+  </view>
+</view>
+
+<!-- 下午  -->
+<view class='{{isShow === "all" ? "" : "rui-hide"}}'>
+  <view class='rui-visit-list' wx:if="{{pmList.length > 0}}" wx:for="{{pmList}}" wx:key="amList">
+    <image class='rui-register-logo' src='{{item.photo}}'></image>
+    <view style='overflow:hidden;padding-left:4vw;height:13.3vw;'>
+      <view class='rui-register-name'>
+        {{item.name}}
+        <!--满#EC6262  -->
+        <text class='rui-register-num' wx:if="{{item.countStatus == 1}}">{{item.countDesc}}</text>
+        <text class='rui-register-num' style='color:#EC6262' wx:if="{{item.countStatus == 0}}">满</text>
+      </view>
+      <view class='rui-register-year'>
+        <text>性别：{{item.gender == 0 ? '女' : item.gender == 1 ? '男' : '未知'}}</text>
+        <text>年龄：{{item.age}}</text>
+        <!--满#D2D2D2  -->
+        <view class='rui-register-btn0'  wx:if="{{item.countStatus == 1}}" data-obj="{{item}}" data-during="1" bindtap='booking'>预约</view>
+        <view class='rui-register-btn0' style='background:#D2D2D2' wx:if="{{item.countStatus == 0}}">预约</view>
+      </view>
+    </view>
+    <view class='rui-register-detail'>
+      擅长：{{item.major}}
+    </view>
+    <!-- <view class='rui-register-icon'  style='background:url({{iconPath.iconMore}}) no-repeat left center/9.6px 15px;'></view> -->
+  </view>
+</view>
+
+<!-- 预约成功的提示  -->
+<view class='rui-layer {{isLayer ? "" : "rui-hide"}}'>
+  <view class='rui-reg-layer-box'>
+    <view class='rui-reg-layer-head'>
+      预约成功
+      <text bindtap='closeLayer' class='rui-reg-icon' style='background:url({{iconPath.iconClose}}) no-repeat center center/4vw 4vw;right:4vw;width:4vw;'></text>
+    </view>
+    <view style='padding:4vw;font-size:4vw;'>
+      <view style='margin-bottom:2vw;'>请记住：</view>
+      <view class='rui-reg-layer-li'>你的预约号为： <text style='color:#7DBCAF;'>{{bookingInfo.during}} {{bookingInfo.number}}号</text></view>
+      <view class='rui-reg-layer-li'>预约诊所： <text style='color:#7DBCAF;'>{{bookingInfo.clinicName}}</text></view>
+      <view class='rui-reg-layer-li'>预约医师： <text style='color:#7DBCAF;'>{{bookingInfo.doctorName}}</text></view>
+      <view class='rui-reg-layer-li'>就诊时间： <text style='color:#7DBCAF;'>{{bookingInfo.date}}</text></view>
+      <view style='color:#EC6262;font-size:3.4vw;line-height:5vw;margin-top:2vw;'>请在30分钟内道场等候，若您错过号数，则自动从最后的诊号排起！</view>
+    </view>
+    <view class='rui-reg-layer-btn-box'>
+      
+        <view bindtap='closeLayer' class='rui-reg-layer-btn' style='float:right;margin-left:2vw;background:#fff;color:#333;border-color:#E7E7E7;'>现场填写</view>
+      <navigator url='../../pages/form/form' hover-class='none' open-type='reLaunch'>
+        <view class='rui-reg-layer-btn'>线上填写问诊表(节省时间)</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

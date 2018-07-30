@@ -1,0 +1,142 @@
+<!--问诊表第二页  -->
+<import src="../../utils/template.wxml"/>
+<include src="../../utils/footer.wxml"/>
+
+<form bindsubmit="formSubmit">
+<view class='page2'>
+  <view class='rui-form-content' style='border-bottom:none;'>
+    <view class="rui-head">初步问诊（每个问题都必须回答）(单选)</view>
+
+    <!-- 寒热 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>寒热</view></view>
+    <template is="pickerTemp" data="{{...list.cfGeneral1}}"/>
+    <template is="pickerTemp" data="{{...list.cfGeneral2}}"/>
+    <template is="pickerTemp" data="{{...list.cfGeneral3}}"/>
+    <template is="pickerTemp" data="{{...list.cfGeneral4}}"/>
+    <template is="pickerTemp" data="{{...list.cfGeneral5}}"/>
+    <template is="pickerTemp" data="{{...list.cfGeneral6}}"/>
+
+    <!-- 汗 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>汗</view></view>
+    <template is="pickerTemp" data="{{...list.sweatCold}}"/>
+    <template is="pickerTemp" data="{{...list.sweatOridinary}}"/>
+    <template is="pickerTemp" data="{{...list.sweatCount}}"/>
+    <template is="pickerTemp" data="{{...list.sweatSleep}}"/>
+
+    <!-- 头身 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>头身</view></view>
+    <template is="pickerTemp" data="{{...list.headAche}}"/>
+    <template is="pickerTemp" data="{{...list.acheGeneral3}}"/>
+    <template is="pickerTemp" data="{{...list.acheGeneral4}}"/>
+    <template is="pickerTemp" data="{{...list.acheGeneral5}}"/>
+    
+    <!-- 小便 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>小便</view></view>
+    <template is="pickerTemp" data="{{...list.peeRate}}"/>
+    <template is="pickerTemp" data="{{...list.pee}}"/>
+    <template is="pickerTemp" data="{{...list.peeColor}}"/>
+    
+    <!-- 大便 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>大便</view></view>
+    <template is="pickerTemp" data="{{...list.defecateGeneral}}"/>
+    <template is="pickerTemp" data="{{...list.defecateDetail}}"/>
+    <template is="pickerTemp" data="{{...list.defecateColor}}"/>
+
+    <!-- 饮食 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>饮食</view></view>
+    <template is="pickerTemp" data="{{...list.appetite}}"/>
+    <!-- <template is="pickerTemp" data="{{...list.thirsty}}"/>  -->
+
+    <!-- 胸腹（包括胀痛、痞痛）（腹诊） -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>胸腹（包括胀痛、痞痛）（腹诊）</view></view>
+    <template is="pickerTemp" data="{{...list.acheChest}}"/>
+    <template is="pickerTemp" data="{{...list.acheGeneral1}}"/>
+    <template is="pickerTemp" data="{{...list.acheGeneral2}}"/>
+    
+    <!-- 耳聋 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>耳聋</view></view>
+    <template is="pickerTemp" data="{{...list.eyeWell}}"/>
+    
+    <!-- 渴 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>渴</view></view>
+    <template is="pickerTemp" data="{{...list.thirsty}}"/>
+
+    <!-- 睡眠 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>睡眠</view></view>
+    <template is="pickerTemp" data="{{...list.sleep}}"/>
+
+    <!-- 痰 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>痰</view></view>
+    <template is="pickerTemp" data="{{...list.phlegm}}"/>
+    <template is="pickerTemp" data="{{...list.phlegmCount}}"/>
+    <template is="pickerTemp" data="{{...list.phlegmDetail}}"/>
+    <template is="pickerTemp" data="{{...list.phlegmColor}}"/>
+
+
+    <!-- 舌诊 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>舌诊</view></view>
+    <template is="pickerTemp" data="{{...list.tongueColor}}"/>
+    <template is="pickerTemp" data="{{...list.lipColor}}"/>
+    <template is="pickerTemp" data="{{...list.tongueSides}}"/>
+    <template is="pickerTemp" data="{{...list.tonguePly}}"/>
+    <template is="pickerTemp" data="{{...list.furColor}}"/>
+    
+    <!-- 疼痛（包括胀痛、痞痛）（腹诊） -->
+    <!-- <view class='rui-form-li'><view class='rui-form-li-input0'>疼痛（包括胀痛、痞痛）（腹诊）</view></view>
+    <template is="pickerTemp" data="{{...list.acheGeneral3}}"/>
+    <template is="pickerTemp" data="{{...list.acheGeneral4}}"/> -->
+
+    <view class='{{sexBool == 1 || sexBool == 0 ? "" : "rui-hide"}}'>
+    <!-- 女性特殊病 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>女性特殊病</view></view>
+    <!--月经  -->
+    <view class='rui-form-li'><view class='rui-form-li-input0 rui-colorg'>1.月经</view></view>
+    <template is="pickerTemp" data="{{...list.menstruationCount}}"/>
+    <template is="pickerTemp" data="{{...list.menstruationCycle}}"/>
+    <template is="pickerTemp" data="{{...list.menstruationColor}}"/>
+    <template is="pickerTemp" data="{{...list.menstruationAche}}"/>
+    <!--白带  -->
+    <view class='rui-form-li'><view class='rui-form-li-input0 rui-colorg'>2.白带</view></view>
+    <template is="pickerTemp" data="{{...list.leucorrheaColor}}"/>
+    <template is="pickerTemp" data="{{...list.leucorrheaCount}}"/>
+    <template is="pickerTemp" data="{{...list.leucorrheaDetail}}"/>
+    <!--子宫及附件  -->
+    <view class='rui-form-li'><view class='rui-form-li-input0 rui-colorg'>3.子宫及附件 </view></view>
+    <template is="pickerTemp" data="{{...list.wombGeneral1}}"/>
+    <template is="pickerTemp" data="{{...list.wombGeneral2}}"/>
+    <template is="pickerTemp" data="{{...list.wombGeneral3}}"/>
+    <template is="pickerTemp" data="{{...list.wombGeneral4}}"/>
+    <template is="pickerTemp" data="{{...list.wombGeneral5}}"/>
+    <template is="pickerTemp" data="{{...list.wombGeneral6}}"/>
+    </view>
+
+    <!-- 儿童病 -->
+    <view wx:if="{{ageBool < 14}}">
+    <view class='rui-form-li'><view class='rui-form-li-input0'>儿童病</view></view>
+    <template is="pickerTemp" data="{{...list.pestisVariolosa}}"/>
+    <template is="pickerTemp" data="{{...list.measles}}"/>
+    </view>
+
+    <!--病史病谱（生过什么病）  -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>病史病谱（生过什么病）</view></view>
+    <template is="pickerTemp" data="{{...list.mhGeneral1}}"/>
+    <template is="pickerTemp" data="{{...list.mhGeneral2}}"/>
+    <template is="pickerTemp" data="{{...list.mhGeneral3}}"/>
+    <template is="pickerTemp" data="{{...list.mhGeneral4}}"/>
+    <!--是否得过其他重病  -->
+    <view class='rui-form-li'><view class='rui-form-li-input0 rui-colorg'>是否得过其他重病</view></view>
+    <textarea name="mgSeriousDisease" data-list="mgSeriousDisease" bindinput='getInput' value='{{list.mgSeriousDisease}}' class='rui-mgSeriousDisease' placeholder='有请详细说明您的病症'></textarea>
+
+    <!-- 脉象 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>脉象</view></view>
+    <template is="pickerTemp" data="{{...list.pulseGeneral1}}"/>
+    <template is="pickerTemp" data="{{...list.pulseGeneral2}}"/>
+    <template is="pickerTemp" data="{{...list.pulseGeneral3}}"/>
+    <template is="pickerTemp" data="{{...list.pulseGeneral4}}"/> 
+
+  </view>
+  <!-- <button class='rui-submit-btn' bindtap='getShowPage' data-page="page1" style='width:40%;float:left;'>上一步</button>
+  <button class='rui-submit-btn' formType="submit" data-page="page3" style='width:40%;float:right;'>下一步</button> -->
+  <button class='rui-submit-btn' formType="submit">下一步</button>
+</view>
+</form>

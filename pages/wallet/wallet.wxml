@@ -1,0 +1,14 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='rui-content'>
+  <navigator url='../../pages/consumption/consumption' hover-class='none'>
+    <view class='rui-wallet-detail'>消费明细</view>
+  </navigator>
+  <view style='margin:20vw auto 5.33vw;'>账户余额</view>
+  <view style='font-size:10.67vw;'><text style='font-size:5.33vw;'>￥</text>{{walletInfo.balance ? walletInfo.balance : 0}}</view>
+</view>
+<navigator url='../../pages/recharge/recharge' hover-class='none'>
+  <view class='rui-green-btn' style='background:#EC6262;'>微信充值</view>
+</navigator>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

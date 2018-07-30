@@ -1,0 +1,7 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='rui-recharge-name'>充值金额</view>
+<input class='rui-green-btn' bindinput='getInput' value='{{money}}' style='background:#fff;text-align:left;padding:0 4vw;border:1px solid #E7E7E7;color:#333;' placeholder='￥'></input>
+<view class='rui-green-btn' data-url="../../pages/transaction/transaction" bindtap='getNext' style='background:#EC6262;'>确认</view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

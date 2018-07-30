@@ -1,0 +1,25 @@
+/* pages/main/main.wxss */
+page{background-color: #f6f7f8;}
+.rui-banner{
+  width: 100vw;
+  height: calc(100vw * 40 / 75);
+}
+.rui-nav-group{
+  /* border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc; */
+  background-color: #fff;
+  font-size: 0;
+  margin-top: 20px;
+}
+.rui-nav-li{
+  display: inline-block;
+  width: 33.3333vw;
+  height: 33.3333vw;
+  box-sizing: border-box;
+  /* border-right: 1px solid #ccc; */
+  font-size: 15px;
+  color: #333333;
+  text-align: center;
+  padding-top: 20vw;
+}
+.rui-nav-li:last-child{border: none;}

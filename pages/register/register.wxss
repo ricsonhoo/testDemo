@@ -1,0 +1,244 @@
+/* pages/register/register.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-register-picker{
+  box-sizing: border-box;
+  width: 69.3vw;
+  background-color: #fff;
+  border: 1px solid rgba(231,231,231,1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 15px;
+  font-size: 0;
+}
+.rui-register-picker-li{
+  display: inline-block;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(231,231,231,1);
+  width: 50%;
+  height: 8.53vw;
+  line-height: 8.53vw;
+  padding: 0 4vw;
+  font-size: 3.5vw;
+  overflow: hidden;
+  position: relative;
+}
+.rui-register-picker-li:last-child{border: none;}
+.rui-register-btn{
+  float: right;
+  height: 8.53vw;
+  line-height: 8.53vw;
+  width: 20vw;
+  text-align: center;
+  color: #fff;
+  font-size: 4vw;
+  background-color: #7DBCAF;
+  border-top: 1px solid #7DBCAF;
+  border-bottom: 1px solid #7DBCAF;
+  margin-right: 15px;
+  border-radius: 3px;
+}
+.rui-mine-icon{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc((16.67vw - 15px) / 2);
+}
+.rui-assortment-head{
+  background-color: #7DBCAF;
+  color: #fff;
+  width:100vw;
+  text-align: center;
+  background:#fff;
+  border-bottom: 1px solid rgba(231,231,231,1);
+  font-size: 0;
+}
+.rui-visit-nav-li{
+  display: inline-block;
+  width: 50vw;
+  font-size: 4vw;
+  height:14.4vw;
+  line-height:14.4vw;
+  color: #333333;
+  box-sizing: border-box;
+  font-family:PingFang-SC-Bold;
+  /* font-weight: bold; */
+  border-right: 1px solid rgba(231,231,231,1);
+}
+.rui-visit-nav-li:last-child{border-right: none;}
+.rui-visit-nav-li.rui-active{
+  color: #7DBCAF;
+  border-bottom: 0.8vw solid #7DBCAF;
+}
+.rui-prompt{
+  display: inline-block;
+  width: 4.8vw;
+  height: 4.8vw;
+  line-height: 4.8vw;
+  border-radius: 50%;
+  background-color: #EC6262;
+  color: #fff;
+  overflow: hidden;
+}
+.rui-visit-list{
+  width:100vw;
+  background:rgba(255,255,255,1);
+  margin-bottom: 3vw;
+  padding: 4vw;
+  box-sizing: border-box;
+  position: relative;
+}
+.rui-visit-list-name{
+  padding: 0 15px;
+  height: 11.733vw;
+  line-height: 11.733vw;
+  font-size: 4vw;
+  color: #333333;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.rui-visit-list-box{
+  height: 28.534vw;
+  border-top: 1px solid rgba(231,231,231,1);
+  border-bottom: 1px solid rgba(231,231,231,1);
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.rui-visit-li{
+  font-size: 3.5vw;
+  color: #989898;
+  margin-top: 3vw;
+  height:  3.5vw;
+  line-height:  3.5vw;
+}
+.rui-visit-li0{
+  display: inline-block;
+  height:  3.5vw;
+  line-height:  3.5vw;
+  margin-right: 8vw;
+}
+.rui-visit-btn{
+  float: right;
+  font-weight: normal;
+  width: 21.87vw;
+  text-align: center;
+  height: 6.4vw;
+  line-height: 6.4vw;
+  margin-top: 2.7vw;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #989898;
+  font-size: 3.5vw;
+  margin-left: 3vw;
+}
+.rui-register-logo{
+  width: 13.3vw;
+  height: 13.3vw;
+  border-radius: 50%;
+  border:1px solid #E7E7E7;
+  float: left;
+  box-sizing: border-box;
+}
+.rui-register-name{
+  color: #7DBCAF;
+  font-size: 4.8vw;
+  height: 5.3vw;
+  line-height: 5.3vw;
+  overflow: hidden;
+}
+.rui-register-num{
+  float: right;
+  color: #81B8E6;
+  font-size: 3.8vw;
+}
+.rui-register-year{
+  height: 8vw;
+  line-height: 8vw;
+  overflow: hidden;
+  font-size: 3vw;
+  color: #333;
+}
+.rui-register-year text{margin-right: 4vw;}
+.rui-register-btn0{
+  float: right;
+  height: 8vw;
+  line-height: 8vw;
+  width: 20vw;
+  text-align: center;
+  color: #fff;
+  font-size: 4vw;
+  background-color: #EC6262;
+  border-radius: 3px;
+}
+.rui-register-detail{
+  font-size: 3vw;
+  color: #989898;
+  margin: 3vw 0 0;
+  overflow: hidden;
+  line-height: 5vw;
+  position: relative;
+}
+.rui-register-icon{
+  display: block;
+  width: 9.6px;
+  height: 15px;
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 4.8px);
+  transform: rotate(90deg);
+}
+.rui-register-icon.rui-active{
+  transform: rotate(-90deg);
+}
+.rui-reg-icon{
+  width: 4vw;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.rui-reg-layer-box{
+  width: 78.8vw;
+  height: 81.9vw;
+  background-color: #fff;
+  border-radius: 2vw;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.rui-reg-layer-head{
+  color: #fff;
+  height: 12.3vw;
+  line-height: 12.3vw;
+  text-align: center;
+  background-color: #7DBCAF;
+  font-size: 4.4vw;
+  position: relative;
+}
+.rui-reg-layer-li{
+  font-size: 3.4vw;
+  height: 6vw;
+  line-height: 6vw;
+}
+.rui-reg-layer-btn-box{
+  height: 17.3vw;
+  border-top: 1px solid #E7E7E7;
+  padding: 4vw;
+  box-sizing: border-box;
+}
+.rui-reg-layer-btn{
+  overflow: hidden;
+  font-size: 3.4vw;
+  color: #fff;
+  height: 11.3vw;
+  line-height: 11.3vw;
+  text-align: center;
+  background-color: #7DBCAF;
+  box-sizing: border-box;
+  border: 1px solid #7DBCAF;
+  border-radius: 4px;
+  padding: 0 3vw;
+}

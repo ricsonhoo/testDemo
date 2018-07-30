@@ -1,0 +1,18 @@
+<view style='padding-bottom:15px;'>
+<view class='rui-history-li' wx:for="{{historyList}}" wx:key="historyList">
+  <navigator url='../../pages/history/history?id={{item.id}}' hover-class='none'>
+  <view class='rui-history-head'>
+    <text class='rui-fr'>{{item.time}}</text>
+    <view style='overflow:hidden;height:45px;line-height:45px;'>
+    <text class='rui-user-name'>{{item.name}}</text> 
+    <text class='rui-icon rui-sex-icon' style='background:url({{item.sex == 1 ? iconPath.icon1 : iconPath.icon2}}) no-repeat center center/16px 16px;margin-right:8px;'></text>
+    <text class='rui-age'>{{item.age}}岁</text>
+    </view>
+  </view>
+  <view class='rui-history-detail'>
+    主诉： <text class='rui-colorp'>{{item.diseaseDesc}}</text>
+  </view>
+  </navigator>
+</view>
+</view>
+<include src="../../utils/footer.wxml"/>

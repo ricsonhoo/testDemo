@@ -1,0 +1,41 @@
+<view class="rui-assortment-head">
+  <view bindtap='changeNav' data-type="0" class='rui-visit-nav-li {{isShow !== "1" ? "rui-active" : ""}}'>
+    待评价 
+    <text class='rui-prompt' wx:if="{{count >= 0}}">{{count}}</text> 
+  </view>
+  <view bindtap='changeNav' data-type="1" class='rui-visit-nav-li {{isShow === "1" ? "rui-active" : ""}}'>全部</view>
+</view>
+
+<!--待评价  -->
+<view>
+  <view class='rui-visit-list' wx:for="{{diagnosisList}}" wx:key="diagnosisList">
+    <view class='rui-visit-list-name'>{{item.date}}</view>
+    <view class='rui-visit-list-box'>
+      <view class='rui-visit-li'>
+        <view class='rui-visit-li0'>就诊诊所：<text style='color:#333;'>{{item.clinic}}</text></view>
+        <view class='rui-visit-li0'>诊断医师：<text style='color:#333;'>{{item.doctor}}</text></view>
+      </view>
+      <view class='rui-visit-li'><view>病种类别：<text style='color:#333;'>{{item.disease}}</text></view></view>
+      <view class='rui-visit-li'>
+        <view>
+          <text style='float:left;'>主诉病情：</text>
+          <view style='color:#333;line-height:5vw;overflow:hidden;'>{{item.diseaseDesc}}</view>
+        </view>
+  </view>
+    </view>
+    <view class='rui-visit-list-name'>
+      <navigator wx:if="{{item.isComment == 0}}" url='../../pages/evaluate/evaluate?id={{item.id}}' hover-class='none'>
+        <view class='rui-visit-btn' style='background:#F39A4B;color:#fff;border-color:#F39A4B;'>待评价</view>
+      </navigator>
+      <navigator wx:if="{{item.isComment == 1}}" url='../../pages/append/append?id={{item.id}}' hover-class='none'>
+        <view class='rui-visit-btn'>追加评价</view>
+      </navigator>
+      <navigator url='../../pages/history/history?id={{item.id}}'>
+        <view class='rui-visit-btn'>查看病历</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

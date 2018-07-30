@@ -1,0 +1,52 @@
+/* pages/assortment/assortment.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-mine-icon{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc((16.67vw - 15px) / 2);
+}
+.rui-assortment-head{
+  background-color: #7DBCAF;
+  color: #fff;
+  width:100vw;
+  height:10.7vw;
+  line-height:10.7vw;
+  text-align: center;
+  font-size: 4vw;
+  background:rgba(125,188,175,1);
+}
+.rui-assortment-li{
+  margin-top: 3vw;
+  width:100vw;
+  box-sizing: border-box;
+  /* height:38.1333vw; */
+  background:rgba(255,255,255,1);
+  padding: 0 15px 4vw;
+  border-top:1px solid rgba(231,231,231,1);
+  border-bottom: 1px solid rgba(231,231,231,1);
+}
+.rui-assortment-name{
+  font-size: 4vw;
+  border-bottom:  1px solid rgba(231,231,231,1);
+  height: 14.4vw;
+  line-height: 14.4vw;
+  color: #7DBCAF;
+  position: relative;
+}
+.rui-assortment-price{
+  display: inline-block;
+  color: #EC6262;
+  font-size: 3.2vw;
+  margin-left: 4vw;
+}
+.rui-assortment-detail{
+  font-size: 3.5vw;
+  color: #333333;
+  line-height: 4.8vw;
+  /* height: 14.4vw; */
+  overflow: hidden;
+  margin-top: 5.1vw;
+}

@@ -1,0 +1,24 @@
+<!--问诊表第二页  -->
+<import src="../../utils/template.wxml"/>
+<include src="../../utils/footer.wxml"/>
+
+<form bindsubmit="formSubmit">
+<view class='page2'>
+  <view class='rui-form-content' style='border-bottom:none;'>
+    <view class="rui-head">初步问诊（每个问题都必须回答）(单选)</view>
+    <view wx:for="{{formList}}" wx:key="formList" style='border-bottom:1px solid #eaeaea;padding-bottom:15px;'>
+      <!-- {{item.name}} -->
+      <view class='rui-form-li'><view class='rui-form-li-input0' style='font-size:17px;'>{{item.name}}</view></view>
+      <textarea name="{{item.curId}}" bindinput='getText' data-list="{{item.curId}}" class='rui-form-li-text {{item.hasRemarks === "1" ? "" : "rui-hide"}}' value="{{objList[item.curId]}}" placeholder='{{item.prompt}}'></textarea>
+      <view wx:for="{{item.subItemList}}" wx:key="question" wx:for-item="question">
+        <view class='rui-form-li'><view class='rui-form-li-input0'>{{question.name}}</view></view>
+        <radio-group name="{{question.id}}" bindchange="radioChange" data-obj="{{item}}" data-list="{{question.id}}">
+          <radio class='rui-form-radio' disabled='{{question.enableBy ? item.disabled : false}}' color="#78b9ac" wx:for="{{question.subItemList}}" wx:key="answer" wx:for-index="answerIndex" wx:for-item="answer" value="{{answer.id}}" checked="{{objList[question.id] === answer.id}}">{{answer.name}}</radio>
+        </radio-group>
+        <textarea name="{{question.curId}}" bindinput='getText' data-list="{{question.curId}}" style='margin-top:10px;' class='rui-form-li-text {{question.hasRemarks === "1" ? "" : "rui-hide"}}' value="{{objList[question.curId]}}" placeholder='{{question.prompt}}'></textarea>
+      </view>
+    </view>
+  </view>
+  <button class='rui-submit-btn' formType="submit">下一步</button>
+</view>
+</form>

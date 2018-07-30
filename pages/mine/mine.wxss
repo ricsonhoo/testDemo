@@ -1,0 +1,48 @@
+/* pages/mine/mine.wxss */
+page{background-color: #f6f7f8;}
+.rui-prompt{
+  display: inline-block;
+  font-size: 3vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  /* line-height: 4.8vw; */
+  border-radius: 50%;
+  background-color: #EC6262;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: text-top;
+}
+.rui-mine-head{
+  background-color: #8fcabe;
+  height: 53.33vw;
+  box-sizing: border-box;
+  padding:13.33vw 15px 0;
+  overflow: hidden; 
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+.rui-mine-logo{
+  width: 16vw;
+  height: 16vw;
+  border-radius: 50%;
+  margin: 0 auto 4vw;
+  overflow: hidden;
+}
+.rui-mine-edit{
+  height: 16.67vw;
+  line-height: 16.67vw;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  color: #222222;
+  font-size: 15px;
+  padding: 0 46px 0 45px;
+  position: relative;
+}
+.rui-mine-icon{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc((16.67vw - 15px) / 2);
+}

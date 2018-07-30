@@ -1,0 +1,9 @@
+/* pages/recharge/recharge.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-recharge-name{
+  padding: 13.33vw 15px 0;
+  font-size: 4vw;
+  color: #333;
+}

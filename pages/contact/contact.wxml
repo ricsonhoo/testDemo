@@ -1,0 +1,68 @@
+<scroll-view  scroll-y="true" class="rui-banner">
+  <view class="swiper">
+    <swiper class="rui-banner" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+            indicator-color="#fff" indicator-active-color="#78b9ac">
+        <block>
+            <!-- <navigator url="../blogList/blogList"> -->
+              <swiper-item class="rui-banner">
+                <block>
+                  <image class='rui-banner' src="../../utils/images/banner.png"/>
+                </block>
+              </swiper-item>
+            <!-- </navigator> -->
+        </block>
+    </swiper>
+  </view>
+</scroll-view> 
+
+<!--关于我们  -->
+<!-- <view class='rui-contact-content'>
+  <view class='rui-contact-head'>关于我们</view>
+  <view class='rui-contact-head-li'>我们的愿景</view>
+  <view class='rui-contact-text'>让更多的人看病更便宜、疗效更显著、寿命更长久，并竭尽所能为中医复兴贡献力量</view>
+  <view class='rui-contact-head-li'>我们的品牌定位</view>
+  <view class='rui-contact-text'>我们的品牌定位  能治大病、难病、重病的中医高科技公司</view>
+  <view class='rui-contact-head-li'>我们的医疗技术体系</view>
+  <view class='rui-contact-text'>古典经方派中医体系</view>
+  <view class='rui-contact-head-li'>我们的运营模式</view>
+  <view class='rui-contact-text'>中医馆（或中医院）+互联网（物联网）+大数据+人工智能+金融</view>
+</view> -->
+<!--联系我们  -->
+<view class='rui-contact-content'>
+  <!-- <view class='rui-contact-head'>联系我们</view> -->
+  <view class='rui-contact-head-li'>联系电话：<text style='font-weight: normal;'>{{storeList[0].contract}}</text></view>
+  <view class='rui-contact-head-li'>联系地址：<text style='font-weight: normal;'>{{storeList[0].address}}</text></view>
+  <view class='rui-contact-head-li'>线下门店：</view>
+</view>
+<map id="map" longitude="{{lng0}}" latitude="{{lat0}}" scale="13" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" show-location style="width: 100vw; height: 123.6vw;">
+  <cover-view class='rui-map-box' style='display:{{page != "page2" ? "" : "none"}}'>
+    <cover-view class='rui-map-head'><cover-view style='margin:0 15px;height: 11.47vw;line-height: 11.47vw;'>门店地址</cover-view></cover-view>
+    <cover-view class='rui-map-list'>
+      <cover-view class='rui-map-li' data-store="{{item}}" bindtap='getCurrentStore' wx:for="{{storeList}}" wx:key="storeList">
+        <cover-image  class='rui-address-icon' src="../../utils/images/iconmarkgreen.png"></cover-image>
+        <cover-view class='rui-address-icon' style='z-index:10000;'>{{index + 1}}</cover-view>
+        <cover-view class='rui-address-name'>{{item.name}}</cover-view>
+        <cover-view class='rui-address-detail'>{{item.address}}</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class='rui-map-box' style='display:{{page == "page2" ? "" : "none"}}'>
+    <cover-view class='rui-map-head' bindtap='goBack'>
+    <cover-image src='../../utils/images/iconback.png' style='width:15px;height:22.5px;position:absolute;top:50%;left:0;margin-left:15px;transform: translateY(-50%);'></cover-image>
+    <cover-view style='margin:0 15px 0 45px;height: 11.47vw;line-height: 11.47vw;'>返回全部门店</cover-view>
+    </cover-view>
+    <cover-view class='rui-map-list'>
+      <cover-view class='rui-map-li' style='padding:0;font-weight: bold;'>
+        {{store.name}}
+        <cover-view class='rui-map-btn' bindtap='openLocation'>到这去</cover-view>
+      </cover-view>
+      <cover-view class='rui-map-li' style='padding:0'>
+        地址：{{store.address}}
+      </cover-view>
+      <cover-view class='rui-map-li' style='padding:0'>
+        电话：{{store.contract}}
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</map>

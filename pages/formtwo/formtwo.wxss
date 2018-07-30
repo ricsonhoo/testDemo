@@ -1,0 +1,7 @@
+/* pages/formtwo/formtwo.wxss */
+.rui-form-radio{
+  font-size: 15px;
+  color: #888888;
+  margin-right: 30px;
+}
+.rui-form-radio:last-child{margin-right: 0;}

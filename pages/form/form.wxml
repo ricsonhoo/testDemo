@@ -1,0 +1,97 @@
+<!--引入picker模板  -->
+<import src="../../utils/template.wxml"/>
+
+<form bindsubmit="formSubmit">
+<!--问诊表第一页  -->
+<view class='page1 {{isShowPage == "page1" ? "" : "rui-hide"}}'>
+  <view class='rui-form-content' style='border-top:none;'>
+    <view class="rui-head">
+      基本情况
+      <!-- <view class='rui-btn0' bindtap='goToHistory'>历史记录</view> -->
+    </view>
+    <view class='rui-form-li' style='height:40px;'>
+      <view style='float:left;width:50%;'>
+        <view class='rui-form-li-name'>姓名</view>
+        <view class='rui-form-li-input'>
+          <input style='background:#fff;border:none;padding:0;' disabled='disabled' name="name" value='{{formInfo1.name}}'></input></view>
+        </view>
+      <view style='float:left;width:50%;'>
+        <view class='rui-form-li-name'>性别</view>
+        <view class='rui-form-li-input'>
+          
+          <input style='background:#fff;border:none;padding:0;' disabled='disabled' name="sex" value='{{formInfo1.sex == 0 ? "女" : "男"}}'></input>
+        </view>
+      </view>
+    </view>
+    <!--性别选择  -->
+    <view class='rui-form-li' style='height:40px;'>
+      <view style='float:left;width:50%;'>
+        <view class='rui-form-li-name'>年龄</view>
+        <view class='rui-form-li-input'><input style='background:#fff;border:none;padding:0;' disabled='disabled' name="age" value='{{formInfo1.age}}'></input></view>
+      </view>
+      <view style='float:left;width:50%;'>
+        <view class='rui-form-li-name'>手机</view>
+        <view class='rui-form-li-input'><input style='background:#fff;border:none;padding:0;' disabled='disabled' name="phone" value='{{formInfo1.phone}}'></input></view>
+      </view>
+    </view>
+    <!-- 生育否 -->
+    <view class='rui-form-li {{sexBool == 0? "" : "rui-hide"}}'>
+      <view class='rui-form-li-name'>生育否(女性)</view>
+      <view class='rui-form-li-input'>
+        <radio-group name="procreated" bindchange="radioChange" data-list="procreated">
+          <radio value='0' checked='{{formInfo1.procreated == 0}}' class='rui-form1-radio' color='#78b9ac'>否</radio>
+          <radio value='1' checked='{{formInfo1.procreated == 1}}' class='rui-form1-radio' color='#78b9ac'>是</radio>
+        </radio-group>
+      </view>
+    </view>
+    <!--主诉什么病  -->
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name0'>主诉什么病</view>
+      <textarea name="diseaseDesc" bindinput='getInput' data-list="diseaseDesc" class='rui-form-li-text' value="{{formInfo1.diseaseDesc}}" placeholder='请详细说明您的症状'></textarea>
+    </view>
+  </view>
+
+  <view class='rui-form-limit'></view>
+  <!--体质  -->
+  <view class='rui-form-content' style='border-bottom:none;'>
+    <view class="rui-head">
+      体质
+    </view>
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>身高</view>
+      <view class='rui-form-li-input'><input name="height" data-list="height" bindinput='getInput' placeholder='CM' value='{{formInfo1.height}}'></input></view>
+    </view>
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>体重</view>
+      <view class='rui-form-li-input'><input name="weight" data-list="weight" bindinput='getInput' placeholder='KG' value='{{formInfo1.weight}}'></input></view>
+    </view>
+    <!-- 身体肌肉 -->
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>身体肌肉</view>
+      <view class='rui-form-li-input'>
+        <radio-group name="muscle" bindchange="radioChange" data-list="muscle">
+          <radio value='0' checked='{{formInfo1.muscle == 0}}' class='rui-form1-radio' color='#78b9ac'>正常</radio>
+          <radio value='1' checked='{{formInfo1.muscle == 1}}' class='rui-form1-radio' color='#78b9ac'>紧实</radio>
+          <radio value='2' checked='{{formInfo1.muscle == 2}}' class='rui-form1-radio' color='#78b9ac'>松软</radio>
+        </radio-group>
+      </view>
+    </view>
+    <!-- 身体肌肉 -->
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>腹部肌肉</view>
+      <view class='rui-form-li-input'>
+        <radio-group name="abdomenMuscle" bindchange="radioChange" data-list="abdomenMuscle">
+          <radio value='0' checked='{{formInfo1.abdomenMuscle == 0}}' class='rui-form1-radio' color='#78b9ac'>正常</radio>
+          <radio value='1' checked='{{formInfo1.abdomenMuscle == 1}}' class='rui-form1-radio' color='#78b9ac'>紧实</radio>
+          <radio value='2' checked='{{formInfo1.abdomenMuscle == 2}}' class='rui-form1-radio' color='#78b9ac'>松软</radio>
+        </radio-group>
+      </view>
+    </view>
+    <!--体质完  -->
+  </view>
+  <button class='rui-submit-btn' formType="submit" data-page="page2">下一步</button>
+</view>
+
+</form>
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

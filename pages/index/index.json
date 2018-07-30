@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "getStartEndPeriod": "plugin://GetPeriod/getStartEndPeriod",
+    "getPeriod": "plugin://GetPeriod/getPeriod"
+  },
+  "navigationBarTitleText": "观合中医"
+}

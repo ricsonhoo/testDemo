@@ -1,0 +1,49 @@
+@import "../../utils/wetoast/noMoreData.wxss";
+page{
+  background-color: #f6f7f8;
+}
+.rui-user-name{
+  color: #7ab8ad;
+  font-size: 18px;
+  margin-right: 4px;
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  vertical-align:text-bottom;
+}
+.rui-age{
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  vertical-align:text-bottom;
+}
+.rui-sex-icon{
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  vertical-align:text-bottom;
+}
+.rui-history-head{
+  color: #888888;
+  font-size: 13px;
+  height: 45px;
+  line-height: 45px;
+}
+.rui-history-li{
+  margin: 15px 15px 0;
+  border:1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fff;
+}
+.rui-history-detail{
+  font-size: 13px;
+  color: #1b1b1b;
+  line-height: 20px;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}

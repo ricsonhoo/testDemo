@@ -1,0 +1,47 @@
+/* pages/evaluate/evaluate.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-mine-icon{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc((16.67vw - 15px) / 2);
+}
+.rui-evaluate-box{
+  box-sizing: border-box;
+  width:100vw;
+  margin-bottom: 4vw;
+  background:rgba(255,255,255,1);
+  padding: 8vw 15px 4vw;
+}
+.rui-evaluate-name{
+  color: #F39A4B;
+  font-size: 4.53vw;
+  line-height: 4.8vw;
+  margin-bottom: 5.3vw;
+}
+.rui-star-box{
+  margin-bottom: 5.3vw;
+  color: #989898;
+  font-size: 4vw;
+  height: 6.7vw;
+  line-height: 6.7vw;
+}
+.rui-star{
+  display: inline-block;
+  height: 6.7vw;
+  width:6.7vw;
+  vertical-align: middle;
+  margin-left: 4vw;
+}
+.rui-evaluate-textarea{
+  box-sizing: border-box;
+  display: block;
+  background: rgba(246,247,248,1);
+  height: 26.7vw;
+  width: 100%;
+  font-size: 4vw;
+  padding: 4vw;
+  color: #989898;
+}

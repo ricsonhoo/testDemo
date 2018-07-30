@@ -1,0 +1,11 @@
+<!--pages/consumption/consumption.wxml-->
+<view class='rui-consumption-li' wx:for="{{consumerInfo}}" wx:key="consumerInfo">
+  <view class='rui-consumption-money'>{{item.type == 0 ? '-' : ''}}{{item.money}}</view>
+  <view class='rui-consumption-detail'>
+    <view>{{item.title}}</view>
+    <view style='font-size:3.5vw;color:#989898;margin-top:2vw;'>{{item.date}}</view>
+  </view>
+</view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

@@ -1,0 +1,96 @@
+
+  <view class='rui-form-content' style='border-top:none;'>
+    <view class="rui-head">
+      基本情况
+    </view>
+    <view class='rui-form-li'>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>姓名：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.name}}</view>
+      </view>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>性别：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.gender == 0 ? '女' : '男'}}</view>
+      </view>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>手机：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.phone}}</view>
+      </view>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>年龄：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.age}}</view>
+      </view>
+      <view class='rui-form-cell' wx:if="{{diagnosisInfo.gender == 0}}">
+        <view class='rui-form-li-name'>生育否(女性)：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.procreated}}</view>
+      </view>
+    </view>
+    <!--主诉什么病  -->
+    <view class='rui-form-li' style='margin-top:0;'>
+      <view class='rui-form-li-name0'>主诉什么病</view>
+      <view class='rui-li-text'>
+        {{diagnosisInfo.diseaseDesc}}
+      </view>
+    </view>
+  </view>
+
+  <view class='rui-form-limit'></view>
+  <!--体质  -->
+  <view class='rui-form-content'>
+    <view class="rui-head">
+      体质
+    </view>
+    <view class='rui-form-li'>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>身高：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.height}}</view>
+      </view>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>体重：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.weight}}</view>
+      </view>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>身体肌肉：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.muscle}}</view>
+      </view>
+      <view class='rui-form-cell'>
+        <view class='rui-form-li-name'>腹部肌肉：</view>
+        <view class='rui-form-li-input'>{{diagnosisInfo.abdomenMuscle}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='rui-form-limit'></view>
+  <!--初步问诊  -->
+  <view class='rui-form-content'>
+    <view class="rui-head">
+      初步问诊
+    </view>
+    <!-- 寒热 -->
+    <view class='rui-form-li' wx:for="{{diagnosisInfo.preliminaryList}}" wx:key="preliminaryList">
+      <view class='rui-form-li-name0'>{{item.name}}</view>
+      <view class='rui-li-text' wx:for="{{item.subItemList}}" wx:key="subItemList" wx:for-item="subItemList">{{subItemList.name}}： <text wx:for="{{subItemList.subItemList}}" wx:key="answer" wx:for-item="answer" wx:if="{{answer.answer == 1}}">{{answer.name}}</text></view>
+    </view>
+  </view>
+
+  <view class='rui-form-limit'></view>
+  <!--精确问诊  -->
+  <view class='rui-form-content'>
+    <view class="rui-head">
+      精确问诊
+    </view>
+    <!-- 寒热 -->
+    <view class='rui-form-li' wx:for="{{diagnosisInfo.preciseList}}" wx:key="preciseList">
+      <view class='rui-form-li-name0'>{{item.name}}</view>
+      <view class='rui-li-text'>
+        <text wx:if="{{subItemList.subItemList.length == 0 && subItemList.answer == 1}}" wx:for="{{item.subItemList}}" wx:key="subItemList" wx:for-item="subItemList" wx:for-index="indx">{{subItemList.name}}，</text>
+      </view>
+      <view class='rui-li-text' wx:if="{{subItemList.subItemList.length > 0}}" wx:for="{{item.subItemList}}" wx:key="subItemList" wx:for-item="subItemList">
+        {{subItemList.name}}： 
+        <text wx:for="{{subItemList.subItemList}}" wx:key="answer" wx:for-item="answer" wx:if="{{answer.answer == 1}}">{{answer.name}}</text> 
+      </view> 
+    </view>
+  </view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

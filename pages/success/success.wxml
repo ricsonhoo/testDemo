@@ -1,0 +1,8 @@
+<view class='rui-fixed'>
+  <text class='rui-icon' style='background:url({{iconPath.success}}) no-repeat center center/100px 100px;width:100px;height:100px;'></text>
+  <view class='rui-submit-success'>问诊表提交成功！</view>
+  <view class='rui-submit-warn'>
+    <view>我们将尽快处理您提交的信息，感谢支持！</view>
+    <view>观合中医客服电话：<text bindtap='callPhone'>028-87503295</text></view>
+  </view>
+</view>

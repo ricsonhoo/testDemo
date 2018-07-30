@@ -1,0 +1,60 @@
+<!--引入picker模板  -->
+<import src="../../utils/template.wxml"/>
+
+<form bindsubmit="formSubmit">
+<!--问诊表第一页  -->
+<view class='page1'>
+  <view class='rui-form-content' style='border:none;background-color:#fff;padding-top:10px;'>
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>头像</view>
+      <view class='rui-form-li-input' style='background:#fff;border:none;'>
+        <input name="photo" style='display:none;' value='{{personalInfo.photo}}'></input>
+        <image style='width:40px;height:40px;border-radius:50%;background:#f6f7f8;' src='{{personalInfo.photo}}'></image>
+        <view class='rui-form-photo' bindtap='getPhoto' data-type="album">从相册中选择</view>
+        <view class='rui-form-photo'  bindtap='getPhoto' data-type="camera">拍照上传</view>
+      </view>
+    </view>
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>姓名</view>
+      <view class='rui-form-li-input'><input name="name" placeholder='请填写您的真实姓名' value='{{personalInfo.name}}'></input></view>
+    </view>
+    <!--性别选择  -->
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>性别</view>
+      <view class='rui-form-li-input'>
+        <text class='rui-icon-ps' style='background:url({{iconPath.iconUnfold}}) no-repeat center center/100% 100%;'></text>
+        <picker name="gender" bindchange="changeList"  value="{{sexIndex}}" data-list="sex" range="{{list}}">
+          {{list[sexIndex]}}
+        </picker>
+      </view>
+    </view>
+
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>出生日</view>
+      <view class='rui-form-li-input'>
+        <text class='rui-icon-ps' style='background:url({{iconPath.iconUnfold}}) no-repeat center center/100% 100%;'></text>
+        <picker name="birthday" bindchange="changeBirthday" end="{{endTime}}" mode="date"  value="{{birthday}}" data-list="birthday" >
+          {{birthday ? birthday : "请选择日期"}}
+        </picker>
+        <!-- <input name="birthday" placeholder='请填写您的年龄' value='{{personalInfo.age}}'></input> -->
+      </view>
+    </view>
+    <view class='rui-form-li'>
+      <view class='rui-form-li-name'>手机</view>
+      <view class='rui-form-li-input'><input name="phone" bindinput='getPhone' placeholder='请填写您的手机号码' value='{{personalInfo.phone}}'></input></view>
+    </view>
+    <view class='rui-form-li' wx:if="{{isCode}}">
+      <view class='rui-form-li-name'>验证码</view>
+      <view class='rui-form-li-input'>
+        <view class='rui-edit-code {{flag ? "rui-colorp" : ""}}' bindtap='getCode'>{{code}}</view>
+        <input name="code" style='width:158px;' placeholder='请填写验证码' value=''></input>
+      </view>
+    </view>
+    
+  </view>
+
+  <button class='rui-submit-btn' formType="submit" style='border-radius:4px'>修改保存</button>
+</view>
+</form>
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

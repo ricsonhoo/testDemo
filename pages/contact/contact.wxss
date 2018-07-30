@@ -1,0 +1,98 @@
+page{background-color: #f6f7f8;}
+.rui-banner{
+  width: 100vw;
+  height: calc(100vw * 40 / 75);
+}
+.rui-contact-content{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 4vw;
+  margin-top: 2.7vw;
+}
+.rui-contact-head{
+  color: #78b9ac;
+  font-size: 4.8vw;
+  border-left:4px solid #78b9ac;
+  padding-left: 10px;
+  height: 6.7vw;
+  line-height: 6.7vw;
+}
+.rui-contact-head-li{
+  color: #333333;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.rui-contact-text{
+  font-size: 13px;
+  color: #333333;
+  line-height: 20px;
+}
+.rui-map-box{
+  width: 92vw;
+  height: 56vw;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 4vw;
+}
+.rui-map-head{
+  height: 11.47vw;
+  line-height: 11.47vw;
+  background-color: #78b9ac;
+  color: #fff;
+  /* padding: 0 15px; */
+  font-size: 15px;
+  position: relative;
+}
+.rui-map-list{padding: 0 15px;}
+.rui-map-li{
+  height: 14.7vw;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding:1.35vw 0vw 1.35vw 8vw;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 14.7vw;
+}
+.rui-map-li:last-child{border: none;}
+.rui-address-icon{
+  display: block;
+  position: absolute;
+  width: 5.3vw;
+  height: 6.7vw;
+  line-height: 5.3vw;
+  text-align: center;
+  top: 4vw;
+  left: 0;
+  color: #fff;
+  font-size: 13px;
+  z-index: 1000;
+}
+.rui-address-name{
+  color: #1b1b1b;
+  font-size: 14px;
+  height: 6vw;
+  line-height: 6vw;
+  overflow: hidden;
+  font-weight: bold;
+}
+.rui-address-detail{
+  color: #989898;
+  font-size: 13px;
+  height: 6vw;
+  line-height: 6vw;
+  overflow: hidden;
+}
+.rui-map-btn{
+  height: 7vw;
+  line-height: 7vw;
+  position: absolute;
+  top: 3.85vw;
+  right: 0;
+  color: #78b9ac;
+  border: 1px solid #78b9ac;
+  box-sizing: border-box;
+  padding: 0 15px;
+}

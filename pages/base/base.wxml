@@ -1,0 +1,7 @@
+<view class='rui-login'>
+  <text class='rui-icon' style='background:url({{iconPath.logo}}) no-repeat center center/88px 88px;width:88px;height:88px;'></text>
+  <view>观合中医</view>
+  <button class='rui-submit-btn'  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style='background-color:#78b9ac;border-radius:5px;'>微信账号一键登录</button>
+  <navigator hover-class='none' url='../../pages/login/login'><view style='color: #b2b2b2;font-size:13px;'>手机验证登陆</view></navigator>
+</view>
+<include src="../../utils/footer.wxml"/>

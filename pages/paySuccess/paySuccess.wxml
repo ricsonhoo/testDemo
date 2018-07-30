@@ -1,0 +1,6 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<text style='display:block;width:26.7vw;height:26.7vw;margin:13.3vw auto 4vw;background:url({{iconPath.iconPaySuccess}})no-repeat center center/100% 100%;'></text>
+<view style='font-size:4.8vw;text-align:center;'>支付成功</view>
+<navigator url='../../pages/index/index' hover-class='none' open-type='redirectTo'>
+  <view class='rui-green-btn'>返回</view>
+</navigator>

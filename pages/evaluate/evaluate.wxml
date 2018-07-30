@@ -1,0 +1,17 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view class='rui-evaluate-box'>
+  <view class='rui-evaluate-name'>请对诊所及医师评价</view>
+  <view class='rui-star-box'>
+    诊所服务
+    <text class='rui-star' wx:for="{{[1,2,3,4,5]}}" wx:key="star0" bindtap='getStar' data-type="0" data-star='{{item}}' style='background:url({{attitudeStar >= item ? iconPath.iconStar0 : iconPath.iconStar1}}) no-repeat center center/6.7vw 6.7vw;'></text>
+  </view>
+  <view class='rui-star-box'>
+    医师态度
+    <text class='rui-star' wx:for="{{[1,2,3,4,5]}}" wx:key="star1" bindtap='getStar' data-type="1" data-star='{{item}}' style='background:url({{diagnosisStar >= item ? iconPath.iconStar0 : iconPath.iconStar1}}) no-repeat center center/6.7vw 6.7vw;'></text>
+  </view>
+  <textarea bindinput='getStar' data-type="2" class='rui-evaluate-textarea' placeholder='说点什么吧...'></textarea>
+</view>
+<view class='rui-green-btn' bindtap='submitComment'>发表评价</view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

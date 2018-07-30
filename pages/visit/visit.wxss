@@ -1,0 +1,99 @@
+/* pages/visit/visit.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-mine-icon{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc((16.67vw - 15px) / 2);
+}
+.rui-assortment-head{
+  background-color: #7DBCAF;
+  color: #fff;
+  width:100vw;
+  height:10.7vw;
+  line-height:10.7vw;
+  text-align: center;
+  background:#fff;
+  border-bottom: 1px solid rgba(231,231,231,1);
+  font-size: 0;
+}
+.rui-visit-nav-li{
+  display: inline-block;
+  width: 50vw;
+  font-size: 4vw;
+  height:10.7vw;
+  line-height:10.7vw;
+  color: #333333;
+  box-sizing: border-box;
+  font-family:PingFang-SC-Bold;
+  /* font-weight: bold; */
+  border-right: 1px solid rgba(231,231,231,1);
+}
+.rui-visit-nav-li:last-child{border-right: none;}
+.rui-visit-nav-li.rui-active{
+  color: #7DBCAF;
+  border-bottom: 0.8vw solid #7DBCAF;
+}
+.rui-prompt{
+  display: inline-block;
+  width: 4.8vw;
+  height: 4.8vw;
+  line-height: 4.8vw;
+  border-radius: 50%;
+  background-color: #EC6262;
+  color: #fff;
+  overflow: hidden;
+}
+.rui-visit-list{
+  width:100vw;
+  height:52vw;
+  background:rgba(255,255,255,1);
+  margin-top: 3vw;
+  border-top: 1px solid rgba(231,231,231,1);
+  border-bottom: 1px solid rgba(231,231,231,1);
+}
+.rui-visit-list-name{
+  padding: 0 15px;
+  height: 11.733vw;
+  line-height: 11.733vw;
+  font-size: 4vw;
+  color: #333333;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.rui-visit-list-box{
+  height: 28.534vw;
+  border-top: 1px solid rgba(231,231,231,1);
+  border-bottom: 1px solid rgba(231,231,231,1);
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.rui-visit-li{
+  font-size: 3.5vw;
+  color: #989898;
+  margin-top: 3vw;
+  height:  3.5vw;
+  line-height:  3.5vw;
+}
+.rui-visit-li0{
+  display: inline-block;
+  height:  3.5vw;
+  line-height:  3.5vw;
+  margin-right: 8vw;
+}
+.rui-visit-btn{
+  float: right;
+  font-weight: normal;
+  width: 21.87vw;
+  text-align: center;
+  height: 6.4vw;
+  line-height: 6.4vw;
+  margin-top: 2.7vw;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #989898;
+  font-size: 3.5vw;
+  margin-left: 3vw;
+}

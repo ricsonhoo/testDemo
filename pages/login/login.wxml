@@ -1,0 +1,21 @@
+<form bindsubmit="formSubmit">
+<view class='rui-form-content' style='margin-top:100px;padding-bottom:0;'>
+  <view class='rui-input-box'>
+    <text class='rui-icon rui-icon-from-login'  style='background:url({{iconPath.iconPhone}}) no-repeat center center/100% 100%;'></text>
+    <input name="phone" bindinput='getPhone' class='rui-form-input' placeholder='请输入手机号码'></input>
+  </view>
+  <view class='rui-input-box'>
+    <text class='rui-icon rui-icon-from-login'  style='background:url({{iconPath.iconCode}}) no-repeat center center/100% 100%;'></text>
+    <input name="code" class='rui-form-input' style='border:none' placeholder='请输入验证码'></input>
+    <view class='rui-from-code' bindtap='getCode'><text class='{{flag ? "rui-colorp" : ""}}'>{{code}}</text></view>
+  </view>
+</view>
+<button class='rui-submit-btn'  formType="submit" style='background-color:#78b9ac;border-radius:5px;'>登录</button>
+</form>
+<view class='rui-form-wx'>
+<navigator hover-class='none' url='../../pages/base/base'>
+<text class='rui-icon'  style='background:url({{iconPath.iconWxLogo}}) no-repeat center center/100% 100%;width:30px;height:24px;'></text>
+<view>使用微信登录</view>
+</navigator>
+</view>
+<include src="../../utils/footer.wxml"/>

@@ -1,0 +1,47 @@
+<!--pages/bespoke/bespoke.wxml-->
+<view class="rui-assortment-head">
+  <view bindtap='changeNav' data-type="0" class='rui-visit-nav-li {{isShow !== "1" ? "rui-active" : ""}}'>
+    本年预约记录 
+    <!-- <text class='rui-prompt'>1</text> -->
+  </view>
+  <view bindtap='changeNav' data-type="1" class='rui-visit-nav-li {{isShow === "1" ? "rui-active" : ""}}'>
+    历年预约记录
+  </view>
+</view>
+
+<!--待评价  -->
+<view>
+  <!--待诊  -->
+  <view class='rui-visit-list' style='height:auto;' wx:for="{{bookingList}}" wx:key="bookingList">
+    <view class='rui-visit-list-name'>{{item.date}} <text style='margin-left:4vw'>{{item.during}} {{item.number}}号</text></view>
+    <view class='rui-visit-list-box' style='height:auto;padding-bottom:3vw;'>
+      <view class='rui-visit-li'>
+        <view class='rui-visit-li0'>预约诊所：<text style='color:#333;'>{{item.clinic}}</text></view>
+        <view class='rui-visit-li0'>预约医师：<text style='color:#333;'>{{item.doctor}}</text></view>
+      </view>
+      <view class='rui-visit-li'><view>病种类别：<text style='color:#333;'>{{item.disease}}</text></view></view>
+    </view>
+    <view class='rui-visit-list-name' style='color:#989898;font-size:3.5vw;font-weight:normal;'>
+      <!--
+      - 待诊颜色色码：#F39A4B
+      - 诊断结束色码：#78B9AC
+      - 过期作废色码：#EC6262
+      - 已退号色码：#EC6262
+      -->
+      <view style='display:inline-block;'>
+        当前状态： 
+        <text style='color:#F39A4B' wx:if="{{item.status == 0}}">{{item.statusDesc}}</text>
+        <text style='color:#F39A4B' wx:if="{{item.status == 1}}">{{item.statusDesc}}</text>
+        <text style='color:#F39A4B' wx:if="{{item.status == 2}}">{{item.statusDesc}}</text>
+        <text style='color:#78B9AC' wx:if="{{item.status == 3}}">{{item.statusDesc}}</text>
+        <text style='color:#EC6262' wx:if="{{item.status == 4}}">{{item.statusDesc}}</text>
+        <text style='color:#EC6262' wx:if="{{item.status == 5}}">{{item.statusDesc}}</text> 
+      </view>
+      <view class='rui-visit-btn' bindtap='unbooking' data-obj="{{item}}" wx:if="{{item.status == 0 || item.status == 1}}" style='background:#EC6262;color:#fff;border-color:#EC6262;'>退号</view>
+    </view>
+  </view>
+</view>
+
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

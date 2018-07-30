@@ -1,0 +1,27 @@
+<scroll-view  scroll-y="true" style='width: {{swidth}}px;height: {{sheight}}px'  class="rui-banner">
+  <view class="swiper">
+    <swiper class="rui-banner" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+            indicator-color="#fff" indicator-active-color="#78b9ac">
+        <block>
+            <!-- <navigator url="../blogList/blogList"> -->
+              <swiper-item class='rui-banner'>
+                <block>
+                  <image class='rui-banner' src="../../utils/images/banner.png"  mode="aspectFill"/>
+                </block>
+              </swiper-item>
+            <!-- </navigator> -->
+        </block>
+    </swiper>
+  </view>
+</scroll-view> 
+
+<view class='rui-nav-group'>
+<!--../../pages/assortment/assortment  -->
+  <view class='rui-nav-li' data-url="../../pages/assortment/assortment" bindtap='goNext' style='background:url({{iconPath.iconGuahao}}) no-repeat center 5vw/10.7vw 10.7vw;'>预约挂号</view>
+  <view class='rui-nav-li' data-url="../../pages/form/form" bindtap='goNext' style='background:url({{iconPath.iconBiao}}) no-repeat center 5vw/10.7vw 10.7vw;'>填写问诊表</view>
+  <view class='rui-nav-li' data-url="../../pages/contact/contact" bindtap='goNext' style='background:url({{iconPath.iconLianxi}}) no-repeat center 5vw/10.7vw 10.7vw;'>联系观合</view>
+</view>
+<include src="../../utils/footer.wxml"/>
+<!-- <getStartEndPeriod />  -->
+<!-- <getPeriod/>  -->

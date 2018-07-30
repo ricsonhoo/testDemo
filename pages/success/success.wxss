@@ -1,0 +1,24 @@
+.rui-fixed{
+  width: 100%;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.rui-submit-success{
+  height: 70px;
+  line-height: 70px;
+  font-size: 18px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  margin: 0 15px;
+}
+.rui-submit-warn{
+  padding-top: 20px;
+  font-size: 13px;
+  color: #b2b2b2;
+  text-align: center;
+  line-height: 20px;
+  margin: 0 15px;
+}

@@ -1,0 +1,24 @@
+/* pages/consumption/consumption.wxss */
+page{
+  background:rgba(246,247,248,1);
+}
+.rui-consumption-li{
+  background-color: #fff;
+  height: 19.6vw;
+  border-bottom: 1px solid #E7E7E7;
+  padding: 0 15px;
+  overflow: hidden;
+}
+.rui-consumption-money{
+  float: right;
+  font-size: 5.3vw;
+  height: 19.6vw;
+  line-height: 19.6vw;
+  color: #333;
+}
+.rui-consumption-detail{
+  overflow: hidden;
+  padding: 4vw 4vw 4vw 0;
+  font-size: 4vw;
+  color: #333;
+}

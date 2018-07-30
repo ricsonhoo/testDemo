@@ -1,0 +1,23 @@
+<!--pages/evaluate/evaluate.wxml-->
+<view class='rui-evaluate-box' style='padding:15px;height:auto;margin-bottom:15px;'>
+  <textarea class='rui-evaluate-textarea' bindinput='getStar' data-type="2" placeholder='汤药已经服用了一段时间了，效果怎么样啊，来说说吧……'></textarea>
+</view>
+<view class='rui-evaluate-box' wx:for="{{commentList}}" wx:key="commentList">
+  <view class='rui-evaluate-name' style='color:#989898;'>{{item.date}}</view>
+  <view class='rui-star-box' wx:if="{{item.attitudeStar}}">
+    诊所服务
+    <text class='rui-star' wx:for="{{[1,2,3,4,5]}}" wx:key="attitudeStarList" wx:for-item="diag"  style='background:url({{item.attitudeStar >= diag ? iconPath.iconStar0 : iconPath.iconStar1}}) no-repeat center center/6.7vw 6.7vw;'></text>
+  </view>
+  <view class='rui-star-box' wx:if="{{item.diagnosisStar}}">
+    医师态度
+    <text class='rui-star' wx:for="{{[1,2,3,4,5]}}" wx:key="diagnosisStarList" wx:for-item="diag"  style='background:url({{item.diagnosisStar >= diag ? iconPath.iconStar0 : iconPath.iconStar1}}) no-repeat center center/6.7vw 6.7vw;'></text>
+  </view>
+  <view class='rui-star-box'>
+    <view style='float:left;'>评价描述</view>
+    <view style='color:#333;overflow:hidden;padding-left:4vw;height:13.4vw;'>{{item.content}}</view>
+  </view>
+</view>
+<view class='rui-green-btn' bindtap='submitComment'>发表评价</view>
+
+<!--toast  -->
+<include src="../../utils/footer.wxml"/>

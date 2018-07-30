@@ -1,0 +1,36 @@
+
+<!--问诊表第三页  -->
+<import src="../../utils/template.wxml"/>
+<include src="../../utils/footer.wxml"/>
+
+<form bindsubmit="formSubmit">
+<view class='page3'>
+  <view class='rui-form-content' style='border-bottom:none;'>
+    <view class="rui-head">精确问诊（只回答存在的问题） (多选)</view>
+    <view wx:for="{{formList}}" wx:key="formList">
+      <!-- 外感风寒 -->
+      <view class='rui-form-li'><view class='rui-form-li-input0' style='color:#1b1b1b;font-size:17px;'>{{item.name}}</view></view>
+      <view class='rui-checkbox-box'>
+        <checkbox-group name="{{item.id}}" bindchange="changeCheckbox" data-type="{{item.id}}">
+          <label class="rui-checkbox" wx:if="{{checkbox.subItemList.length <= 0}}" wx:for="{{item.subItemList}}" wx:key="{{item.id}}" wx:for-item="checkbox">
+            <checkbox color="#78b9ac" value="{{checkbox.id}}" checked='{{objList1[item.id][checkbox.id] ? true : false}}'/>{{checkbox.name}}
+          </label>
+        </checkbox-group>
+        <textarea name="{{item.curId}}" bindinput='getText' data-list="{{item.curId}}" style='margin-top:5px;' class='rui-form-li-text {{item.hasRemarks == "1" ? "" : "rui-hide"}}' value="" placeholder='{{item.prompt}}'></textarea>
+        <view wx:for="{{item.subItemList}}" wx:key="{{item.id}}" wx:for-item="radio">
+          <radio-group bindchange="changeRadio" data-type="{{radio.id}}" class="rui-radio" wx:if="{{radio.subItemList.length > 0}}" name="{{radio.id}}">
+            <view style='font-size:15px;color:#1b1b1b;height:40px;line-height:40px;'>
+              {{radio.name}} 
+            </view>
+            <label class="rui-radio" style='color:#888888;font-size:15px;margin-right:30px;' wx:for="{{radio.subItemList}}" wx:key="radioAnswer" wx:for-item="radioAnswer" wx:for-index="radioAnswerIndex"> 
+              <radio color="#78b9ac" value="{{radioAnswer.id}}" checked='{{objList1[radio.id] === radioAnswer.id}}'/>{{radioAnswer.name}}
+            </label>
+          </radio-group>
+          <textarea name="{{radio.curId}}" bindinput='getText' data-list="{{radio.curId}}" style='margin-top:5px;' class='rui-form-li-text {{radio.hasRemarks == "1" ? "" : "rui-hide"}}' value="" placeholder='{{radio.prompt}}'></textarea> 
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class='rui-submit-btn' formType="submit">提交问诊表</button>
+</view>
+</form>

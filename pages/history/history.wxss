@@ -1,0 +1,6 @@
+/* pages/history/history.wxss */
+.rui-form-li{font-size: 0;}
+.rui-form-cell{
+  display: inline-block;
+  width: 50%;
+}

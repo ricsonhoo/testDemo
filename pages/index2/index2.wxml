@@ -1,0 +1,131 @@
+
+<!--问诊表第三页  -->
+<import src="../../utils/template.wxml"/>
+<include src="../../utils/footer.wxml"/>
+
+<form bindsubmit="formSubmit">
+<view class='page3'>
+  <view class='rui-form-content' style='border-bottom:none;'>
+    <view class="rui-head">精确问诊（只回答存在的问题） (多选)</view>
+
+    <!-- 外感风寒 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>外感风寒</view></view>
+    <view class='rui-checkbox-box'>
+      <checkbox-group name="wgfh" bindchange="changeCheck" data-list="{{list.wgfh.attr}}">
+        <label class="rui-checkbox" color="#78b9ac" wx:for="{{list.wgfh.array}}" wx:key="wgfh">
+          <checkbox value="{{index}}"/>{{item}}
+        </label>
+      </checkbox-group>
+      <radio-group class="rui-radio" name="sweat">
+        出汗情况  
+        <label class="rui-radio"> 
+          <radio color="#78b9ac" value="0" checked='true'/>有汗
+        </label>
+        <label class="rui-radio">
+          <radio color="#78b9ac" value="1"/>无汗
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 里实热 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>里实热</view></view>
+    <view class='rui-checkbox-box'>
+      <checkbox-group name="lsr" bindchange="changeCheck" data-list="{{list.lsr.attr}}">
+        <label class="rui-checkbox" color="#78b9ac" wx:for="{{list.lsr.array}}" wx:key="lsr">
+          <checkbox value="{{index}}" />{{item}}
+        </label>
+      </checkbox-group>
+      <radio-group class="rui-radio" name="eat">
+        饮食情况  
+        <label class="rui-radio"> 
+          <radio color="#78b9ac" value="0" checked='true'/>能吃东西
+        </label>
+        <label class="rui-radio">
+          <radio color="#78b9ac" value="1"/>不能吃东西
+        </label>
+       </radio-group>
+      <radio-group class="rui-radio" name="defecate"> 
+        大便先干后稀  
+        <label class="rui-radio"> 
+          <radio color="#78b9ac" value="0" checked='true'/>否
+        </label>
+        <label class="rui-radio">
+          <radio color="#78b9ac" value="1"/>是
+        </label>
+       </radio-group>
+       <radio-group class="rui-radio" name="peeDetail">  
+        小便少而不畅、偏黄
+        <label class="rui-radio"> 
+          <radio color="#78b9ac" value="0" checked='true'/>否
+        </label>
+        <label class="rui-radio">
+          <radio color="#78b9ac" value="1"/>是
+        </label>
+       </radio-group>
+      <radio-group class="rui-radio" name="hfDetail"> 
+        手脚出冷汗
+        <label class="rui-radio"> 
+          <radio color="#78b9ac" value="0" checked='true'/>否
+        </label>
+        <label class="rui-radio">
+          <radio color="#78b9ac" value="1"/>是
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 冷热无常 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>冷热无常</view></view>
+    <view class='rui-checkbox-box'>
+      <checkbox-group name="lrwc" bindchange="changeCheck" data-list="{{list.lrwc.attr}}">
+        <label class="rui-checkbox" color="#78b9ac" wx:for="{{list.lrwc.array}}" wx:key="lrwc">
+          <checkbox value="{{index}}" />{{item}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <!-- 里虚胃寒 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>里虚胃寒</view></view>
+    <view class='rui-checkbox-box'>
+      <checkbox-group name="lxwh" bindchange="changeCheck" data-list="{{list.lxwh.attr}}">
+        <label class="rui-checkbox" color="#78b9ac" wx:for="{{list.lxwh.array}}" wx:key="lxwh">
+          <checkbox value="{{index}}" />{{item}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <!-- 阳虚体寒 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>阳虚体寒</view></view>
+    <view class='rui-checkbox-box'>
+      <checkbox-group name="yxth" bindchange="changeCheck" data-list="{{list.yxth.attr}}">
+        <label class="rui-checkbox" color="#78b9ac" wx:for="{{list.yxth.array}}" wx:key="yxth">
+          <checkbox value="{{index}}" />{{item}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <!-- 上热下寒 -->
+    <view class='rui-form-li'><view class='rui-form-li-input0'>上热下寒</view></view>
+    <view class='rui-checkbox-box' style='border:none'>
+      <checkbox-group name="srxh" bindchange="changeCheck" data-list="{{list.srxh.attr}}">
+        <label class="rui-checkbox" color="#78b9ac" wx:for="{{list.srxh.array}}" wx:key="srxh">
+          <checkbox value="{{index}}" />{{item}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <!-- 状态 -->
+    <!-- <view class='rui-form-li'><view class='rui-form-li-input0'>状态</view></view>
+    <template is="pickerTemp" data="{{...list.state}}"/> -->
+
+    <!-- 医师ID -->
+    <!-- <view class='rui-form-li'>
+      <view class='rui-form-li-name'>医师ID</view>
+      <view class='rui-form-li-input'><input name="doctorId" placeholder='请填写医师ID' value='30'></input></view>
+    </view> -->
+
+  </view>
+  <!-- <button class='rui-submit-btn' bindtap='getShowPage' data-page="page2"  style='width:40%;float:left;'>上一步</button>
+  <button class='rui-submit-btn' formType="submit" style='width:40%;float:right;'>提交问诊表</button>  -->
+  <button class='rui-submit-btn' formType="submit">提交问诊表</button>
+</view>
+</form>
