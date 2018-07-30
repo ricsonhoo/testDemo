@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/paySuccess/paySuccess",
+    "pages/evaluate/evaluate",
+    "pages/visit/visit",
+    "pages/mine/mine",
+    "pages/history/history",
+    "pages/assortment/assortment",
+    "pages/form/form",
+    "pages/formtwo/formtwo",
+    "pages/formthree/formthree",
+    "pages/success/success",
+    "pages/contact/contact",
+    "pages/edit/edit",
+    "pages/wallet/wallet",
+    "pages/bespoke/bespoke",
+    "pages/consumption/consumption",
+    "pages/register/register",
+    "pages/addUserInfo/addUserInfo",
+    "pages/recharge/recharge",
+    "pages/append/append",
+    "pages/base/base",
+    "pages/login/login",
+    "pages/index2/index2",
+    "pages/index1/index1",
+    "pages/historyInquisition/historyInquisition",
+    "pages/transaction/transaction"
+  ],
+  "plugins": {
+    "GetPeriod": {
+      "version": "1.0.0",
+      "provider": "wxb6b7d08fbca740e4"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "门诊",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#b2b2b2",
+    "selectedColor": "#78b9ac",
+    "backgroundColor": "#fff",
+    "borderStyle": "#b6b6b6",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "utils/images/icon_home.png",
+        "selectedIconPath": "utils/images/icon_home_fill.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "utils/images/icon_mine.png",
+        "selectedIconPath": "utils/images/icon_mine_fill.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+@import "./utils/wetoast/wetoast.wxss";
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/*隐藏显示  */
+.rui-hide{display: none;}
+.rui-show{display: inline-block!important;}
+.rui-showb{display: block!important;}
+
+/*浮动  */
+.rui-fr{float: right;}
+.rui-fl{float: left;}
+
+/*color  */
+.rui-colorp{color: #888888!important;}
+.rui-colorg{color: #b2b2b2!important;}
+
+/*img  */
+.rui-full{display: block;width:100%;}
+
+/*icon  */
+.rui-icon{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+.rui-icon-from-login{
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+/*index and history  */
+.rui-head{
+  height: 45px;
+  line-height: 45px;
+  font-size: 18px;
+  color: #78b9ac;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+.rui-form-limit{
+  background-color: #f6f7f8;
+  height: 15px;
+}
+.rui-btn0{
+  float: right;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+  border: 1px solid #78b9ac;
+  font-size: 12px;
+}
+.rui-form-content{
+  padding: 0 15px 15px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.rui-submit-btn{
+  background-color: #78b9ac;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 20px;
+  margin: 30px 15px 50px;
+}
+.rui-form-li{margin-top: 10px;}
+.rui-form-li-name{
+  font-size: 15px;
+  color: #1b1b1b;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+}
+.rui-form-li-name0{
+  font-size: 15px;
+  color: #1b1b1b;
+  height: 40px;
+  line-height: 40px;
+}
+.rui-form-li-text{
+  background-color: #f6f7f8;
+  border: 1px solid #e7e7e7;
+  color: #b2b2b2;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+}
+.rui-li-text{
+  color: #888;
+  font-size: 15px;
+  line-height: 24px;
+}
+.rui-form-li-input{
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  color: #888;
+  padding-left: 10px;
+  font-size: 15px;
+  position: relative;
+}
+.rui-form-li-input0{
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  color: #1b1b1b;
+  font-size: 15px;
+  position: relative;
+}
+.rui-icon-ps{
+  display: block;
+  width: 9px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.rui-form-li-input0 picker,.rui-form-li-input picker,.rui-form-li-input input{
+  background-color: #f6f7f8;
+  border: 1px solid #e7e7e7;
+  color: #777;
+  font-size: 15px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+.rui-radio-group{
+  height: 24px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+.rui-label{margin-right: 10px;}
+.rui-login{
+  text-align: center;
+  padding: 30px 0;
+  line-height: 50px;
+  font-size: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 80%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-20%);
+  z-index: 10;
+}
+/*form  */
+.rui-mgSeriousDisease{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f6f7f8;
+  border: 1px solid #e7e7e7;
+  color: #777;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 3px;
+}
+.rui-checkbox,.rui-radio{
+  display: inline-block;
+  color: #1b1b1b;
+  font-size: 15px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.rui-checkbox-box{
+  border-bottom:1px solid #ccc;
+}
+
+/*遮罩层  */
+.rui-layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.rui-green-btn{
+  height: 11.73vw;
+  line-height: 11.73vw;
+  color: #fff;
+  background-color: #78B9AC;
+  font-size: 4vw;
+  text-align: center;
+  border-radius: 4px;
+  margin: 8vw 15px 8vw;
+}
