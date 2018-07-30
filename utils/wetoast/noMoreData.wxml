@@ -1,0 +1,3 @@
+<template name="noMoreData">
+  <view class='rui-more-data {{isMore ? "rui-showb" : "rui-hide"}}'>{{title}}</view>
+</template>

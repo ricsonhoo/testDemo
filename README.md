@@ -6,14 +6,16 @@
 
 ## 页面路径说明
 
-1.  tabbar页面
+### 1.  tabbar页面
 
+---
 "pages/index/index",//首页
 ---
 "pages/mine/mine",//个人中心
 
-2. 首页二级页面
+### 2. 首页二级页面
 
+---
 "pages/assortment/assortment",//选择病种
 ---
 "pages/register/register",//预约挂号
@@ -30,8 +32,9 @@
 ---
 "pages/contact/contact",//联系观合
 
-3. 个人中心二级页面
+### 3. 个人中心二级页面
 
+---
 "pages/edit/edit",//修改个人资料
 
 ---
@@ -58,25 +61,35 @@
 "pages/history/history",//查看病历
 ---
 
-4. 其他（登录）
+### 4. 其他（登录）
+
+---
 "pages/base/base",//微信一键登录
 ---
 "pages/login/login",//手机验证码登录
 ---
 "pages/addUserInfo/addUserInfo",//添加个人信息
 
-5. 一期废除页面
+### 5. 一期废除页面
+
+---
 "pages/index1/index1",//初诊问诊表
 ---
 "pages/index2/index2",//精诊问诊表
 ---
 "pages/historyInquisition/historyInquisition",//历史记录
 
-5. git命令
+### 6. git命令
+
+---
 git init
+---
 git add README.md
+---
 git commit -m "提交说明"
+---
 git remote add origin https://github.com/Rattenking/WX-GHZY.git
+---
 git push -u origin master
 
 

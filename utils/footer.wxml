@@ -1,0 +1,6 @@
+<!-- wetoast模板 -->
+<import src="./wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>
+<!-- noMoreData模板 -->
+<import src="./wetoast/noMoreData.wxml"/>
+<template is="noMoreData" data="{{...__noMoreData__}}"/>
