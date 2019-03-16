@@ -27,12 +27,6 @@
     "pages/historyInquisition/historyInquisition",
     "pages/transaction/transaction"
   ],
-  "plugins": {
-    "GetPeriod": {
-      "version": "1.0.0",
-      "provider": "wxb6b7d08fbca740e4"
-    }
-  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",

@@ -1,6 +1,6 @@
 const iconPath = require("../../utils/iconPath.js");
 const urlList = require("../../utils/config.js");
-let period = requirePlugin("GetPeriod");
+// let period = requirePlugin("GetPeriod");
 const app = getApp();
 Page({
   data: {
@@ -9,7 +9,8 @@ Page({
     clinic: 0
   },
   onLoad(opts){
-    let now = period.getNowDate();
+	// let now = period.getNowDate();
+	let now = '';
     this.setData({ iconPath: iconPath, diseaseId: opts.id, date: now, startTime: now});
     // 构建WeToast
     this.wetoast = new app.WeToast();

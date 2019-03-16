@@ -1,7 +1,7 @@
 const iconPath = require("../../utils/iconPath.js");
 const CountTime = require("../../utils/countTime.js");
 const urlList = require("../../utils/config.js");
-let period = requirePlugin("GetPeriod");
+// let period = requirePlugin("GetPeriod");
 const app = getApp();
 Page({
   data: {

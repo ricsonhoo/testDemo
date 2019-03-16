@@ -1,7 +1,7 @@
 const iconPath = require("../../utils/iconPath.js");
 const CountTime = require("../../utils/countTime.js");
 const urlList = require("../../utils/config.js");
-let period = requirePlugin("GetPeriod");
+// let period = requirePlugin("GetPeriod");
 const app = getApp();
 Page({
   data:{
@@ -12,7 +12,8 @@ Page({
     list: ['请选择您的性别', '女', '男']
   },
   onLoad() {
-    let now = period.getNowDate();
+	// let now = period.getNowDate();
+	let now = '';
     this.setData({ iconPath: iconPath, endTime: now});
     this.time = new CountTime(this);
     // 获取信息
